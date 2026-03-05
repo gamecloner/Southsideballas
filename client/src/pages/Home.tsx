@@ -7,20 +7,21 @@ import { JoinBallasForm } from "@/components/JoinBallasForm";
 import { ContactUsForm } from "@/components/ContactUsForm";
 
 const crewMembers = [
-  'Raja jaat',
-  'Zayn Diaz',
-  'Aalesh Jaat',
-  'Aron Rajput',
-  'Liam Martinez',
-  'Kraig Stanfill',
-  'Ashish Kumar',
-  'Vicky Mann',
-  'Tushar Kathait',
-  'Alec Martinez',
-  'Drip Johnson',
-  'Dan Sandhu',
-  'Archit Adler',
-  'Shiva Shelke'
+  { name: 'Raja jaat', image: 'https://i.postimg.cc/N59fjhZq/raja-jaat.png' },
+  { name: 'Zayn Diaz', image: 'https://i.postimg.cc/62M5yBBk/zayn-diaz.png' },
+  { name: 'Aalesh Jaat' },
+  { name: 'Aron Rajput', image: 'https://i.postimg.cc/5H1xgXyQ/aron-rajput.png' },
+  { name: 'Liam Martinez', image: 'https://i.postimg.cc/gnZmPV6X/liam-martinez.png' },
+  { name: 'Kraig Stanfill' },
+  { name: 'Ashish Kumar', image: 'https://i.postimg.cc/kDVdxQsw/ashish-kumar.png' },
+  { name: 'Vicky Mann', image: 'https://i.postimg.cc/ygttfGjF/vicky-mann.png' },
+  { name: 'Tushar Kathait', image: 'https://i.postimg.cc/4YsMFVvg/tushar-kathait.png' },
+  { name: 'Alec Martinez', image: 'https://i.postimg.cc/G9D5Lqqr/alec-martinez.png' },
+  { name: 'Drip Johnson' },
+  { name: 'Dan Sandhu', image: 'https://i.postimg.cc/KKK598Hw/dan-sandhu.png' },
+  { name: 'Archit Adler', image: 'https://i.postimg.cc/kRNsxYpG/archit-adler.png' },
+  { name: 'Shiva Shelke', image: 'https://i.postimg.cc/TpRFtnJG/shiv-shelke.png' },
+  { name: 'Anthony Stanfill', image: 'https://i.postimg.cc/G934r5bW/anthony-stanfill.png' }
 ];
 
 const videos = [
@@ -42,10 +43,18 @@ const Crew = () => (
         Meet the members of the South Side Ballas.
       </p>
       <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-        {crewMembers.map((name, index) => (
+        {crewMembers.map((member, index) => (
           <div key={index} className="relative group">
-            <div className="aspect-square bg-gray-800 rounded-lg border border-gray-700 transition-all duration-300 group-hover:border-[rgb(138,43,226)] group-hover:shadow-[0_0_15px_5px_rgba(138,43,226,0.5)]"></div>
-            <p className="text-center mt-2 font-medium">{name}</p>
+            <div className="aspect-square bg-gray-800 rounded-lg border border-gray-700 transition-all duration-300 group-hover:border-[rgb(138,43,226)] group-hover:shadow-[0_0_15px_5px_rgba(138,43,226,0.5)]">
+              {member.image && (
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              )}
+            </div>
+            <p className="text-center mt-2 font-medium">{member.name}</p>
           </div>
         ))}
       </div>
