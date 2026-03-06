@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Play, Info } from "lucide-react";
 import React from 'react';
 // @ts-ignore - Vite asset import
-import heroVideo from "@assets/South Side Ballas Music Video _GTA V Cinematics.mp4";
+import heroImage from "@assets/balu.jpg";
 
 export function Hero() {
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
@@ -15,18 +15,13 @@ export function Hero() {
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black film-grain">
-      {/* Background Video */}
+      {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
+        <img
+          src={heroImage}
+          alt="Background"
           className="object-cover w-full h-full opacity-70 scale-105"
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
+        />
         
         {/* Overlays for depth and text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/20" />
